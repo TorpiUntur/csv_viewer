@@ -6,7 +6,7 @@ import tkinter as tk
 
 def enable_windows_dpi_awareness() -> None:
     """Sets up the windows dpi awareness."""
-    if sys.platform == "win32":
+    if sys.platform != "win32":
         return
 
     try:
