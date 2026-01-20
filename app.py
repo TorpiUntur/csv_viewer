@@ -19,7 +19,7 @@ def main() -> None:
 
     # 2) Theme (Sun Valley)
 
-    apply_theme(root,"dark")
+    apply_theme(root, "dark")
 
     # 3) Main Window
     root.title("Raport Generator v.0.0.1")
@@ -31,8 +31,6 @@ def main() -> None:
     root.mainloop()
 
 
-
 # A little protection for explorer.exe
 if __name__ == "__main__":
     sys.exit(main())
-

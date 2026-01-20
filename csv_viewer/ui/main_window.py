@@ -26,7 +26,9 @@ class MainWindow(ttk.Frame):
         topbar.grid(row=0, column=0, sticky="ew", padx=10, pady=(10, 0))
         topbar.columnconfigure(2, weight=1)
 
-        ttk.Label(topbar, text="CSV Viewer (placeholder UI)").grid(row=0, column=0, sticky="w")
+        ttk.Label(topbar, text="CSV Viewer (placeholder UI)").grid(
+            row=0, column=0, sticky="w"
+        )
 
         self.theme_btn_text = tk.StringVar(value=self._theme_button_label())
         ttk.Button(
@@ -52,11 +54,15 @@ class MainWindow(ttk.Frame):
         right.grid(row=0, column=1, sticky="nsew")
 
         ttk.Label(left, text="Left panel: CSV table preview (ETAP 2)").pack(anchor="w")
-        ttk.Label(right, text="Right panel: plot controls + plot (ETAP 3+)").pack(anchor="w")
+        ttk.Label(right, text="Right panel: plot controls + plot (ETAP 3+)").pack(
+            anchor="w"
+        )
 
     def _build_statusbar(self) -> None:
         self.status_var = tk.StringVar(value="Ready")
-        status = ttk.Label(self, textvariable=self.status_var, style="Status.TLabel", anchor="w")
+        status = ttk.Label(
+            self, textvariable=self.status_var, style="Status.TLabel", anchor="w"
+        )
         status.grid(row=2, column=0, sticky="ew", padx=10, pady=(0, 10))
 
     def _on_toggle_theme(self) -> None:

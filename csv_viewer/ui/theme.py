@@ -6,13 +6,17 @@ from tkinter import ttk
 
 import sv_ttk
 
+
 @dataclass(frozen=True)
 class ThemeState:
     """Keeps track of the current theme state"""
-    mode: str # "light" | "dark"
+
+    mode: str  # "light" | "dark"
+
 
 # simple global state
-_theme_state = ThemeState(mode = "dark")
+_theme_state = ThemeState(mode="dark")
+
 
 def apply_theme(root: tk.Tk, mode: str = "dark") -> None:
     """
@@ -31,10 +35,11 @@ def apply_theme(root: tk.Tk, mode: str = "dark") -> None:
 
     # Save state
     global _theme_state
-    _theme_state = ThemeState(mode = mode)
+    _theme_state = ThemeState(mode=mode)
 
     # Additional style setting
     _apply_custom_ttk_styles(root)
+
 
 def toggle_theme(root: tk.Tk) -> str:
     """
@@ -45,9 +50,11 @@ def toggle_theme(root: tk.Tk) -> str:
     apply_theme(root, new_mode)
     return new_mode
 
+
 def get_theme_mode() -> str:
     """Returns current theme mode (dark or light)"""
     return _theme_state.mode
+
 
 def _apply_custom_ttk_styles(root: tk.Tk) -> None:
     """
@@ -57,8 +64,7 @@ def _apply_custom_ttk_styles(root: tk.Tk) -> None:
 
     # Example padding
 
-    style.configure("TButton", padding = (10,6))
-    style.configure("TEntry", padding = (6,4))
-    style.configure("TCombobox", padding = (6,4))
-    style.configure("TLabel", padding = (8,4))
-
+    style.configure("TButton", padding=(10, 6))
+    style.configure("TEntry", padding=(6, 4))
+    style.configure("TCombobox", padding=(6, 4))
+    style.configure("TLabel", padding=(8, 4))
